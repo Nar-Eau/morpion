@@ -1,5 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
 
+#morpion {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#overlay {
+  display: none;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Styles pour la boîte du formulaire */
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
 
 body {
   text-align: center;
@@ -24,27 +54,47 @@ body {
   }
 }
 
-.marqueeBot, .marqueeTop {
+.player1, .player2 {
   position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+}
+
+.player1 {
+  background: url("./img/croix.gif");
+}
+
+.player2 {
+  right: 0;
+  background: url("./img/rond.gif");
+}
+
+.marqueeBot, .marqueeTop {
+  color: white;
+  font-size: 40px;
   width: 100%;
   height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: absolute;
 
   .moving {
-    display: inline-block;
-    padding-right: 100%;
+    width: max-content;
+  }
+
+  .moving span{
+    height: 100px;
+    line-height: 98px;
   }
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(100vw);
   }
 }
 
@@ -53,7 +103,8 @@ body {
   background: #FF9E24;
 
   .moving {
-    animation: marquee 20s linear infinite;
+    animation: marquee 10s linear infinite;
+    text-align: left;
   }
 }
 
@@ -61,8 +112,9 @@ body {
   top: 0;
   background: #6A0D83;
 
-  .moving {
-    animation: marquee 20s linear reverse infinite;
+  .moving{
+    animation: marquee 10s linear reverse infinite;
+    text-align: right;
   }
 }
 
@@ -73,11 +125,11 @@ body {
   width: 75px;
 
   &.croix {
-    background: no-repeat url("./img/croix.gif");
+    background: no-repeat url("./img/croix.png");
   }
 
   &.rond {
-    background: no-repeat url("./img/rond.gif");
+    background: no-repeat url("./img/rond.png");
   }
 
 }
@@ -85,6 +137,9 @@ body {
 #Jeu {
   display: inline-block;
   position: absolute;
+  background: white;
+  padding: 1rem;
+  border: 5px solid black;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -94,19 +149,9 @@ body {
     overflow: hidden;
   }
 
-  #gifjoueur {
-    content: '';
-    display: block;
+  img {
     height: 100px;
     width: 100px;
-    &.croix {
-      background: no-repeat url("./img/croix.gif");
-    }
-
-    &.rond {
-      background: no-repeat url("./img/rond.gif");
-    }
-
   }
 
   button {

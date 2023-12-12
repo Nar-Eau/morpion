@@ -1,59 +1,54 @@
+<div id="overlay"></div>
 
-<div class="marqueeTop">
-  <div class="moving">
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
+<!-- La boîte du formulaire -->
+<div id="popup">
+  <h2>Mon Formulaire</h2>
+  <form id="myForm">
+    <!-- Ajoutez vos champs de formulaire ici -->
+    <label for="p1name">Joueur 1</label>
+    <input type="text" id="p1name" name="name" required>
+    <br>
+    <label for="p2name">Joueur 2</label>
+    <input type="text" id="p2name" name="email" required>
+    <br>
+    <input type="submit" value="Envoyer">
+  </form>
+</div>
+
+<div id="morpion">
+  <div class="marqueeTop">
+      <div class="moving">
+        <span>Croix</span>
+      </div>
   </div>
-  <div class="moving">
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
-    <div class="gifsJoueur croix"></div>
+  <div class="marqueeBot">
+      <div class="moving">
+        <span>Rond</span>
+      </div>
+  </div>
+  <div id="Jeu">
+    <div class="title">morpion</div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div id="StatutJeu"></div>
   </div>
 </div>
-<div class="marqueeBot">
-  <div class="moving">
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-  </div>
-  <div class="moving">
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-    <div class="gifsJoueur rond"></div>
-  </div>
-</div>
-<div id="Jeu">
-  <div class="title">morpion</div>
-  <div>
-    <button></button>
-    <button></button>
-    <button></button>
-  </div>
-  <div>
-    <button></button>
-    <button></button>
-    <button></button>
-  </div>
-  <div>
-    <button></button>
-    <button></button>
-    <button></button>
-  </div>
-  <div id="StatutJeu"></div>
-</div>
+
+<div class="player1"></div>
+<div class="player2"></div>
 
 <script type="module" src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

@@ -1,100 +1,79 @@
 import './style.scss'
 
 function estValide(button) {
-    return button.innerHTML.length == 0;
+    return button.classList.length == 0;
 }
 
 function setSymbol(btn, symbole) {
-    btn.innerHTML = symbole
+    btn.innerHTML = '<img src="http://localhost:5173/img/'+ symbole +'.gif" alt="'+ symbole +'"/>'
     btn.classList.add(symbole)
 }
 
 function rechercherVainqueur(pions, joueurs, tour) {
     if (
-        pions[0].innerHTML == joueurs[tour] &&
-        pions[1].innerHTML == joueurs[tour] &&
-        pions[2].innerHTML == joueurs[tour]
+        pions[0].classList.contains(joueurs[tour]) &&
+        pions[1].classList.contains(joueurs[tour]) &&
+        pions[2].classList.contains(joueurs[tour])
     ) {
-        pions[0].style.backgroundColor = "#9ACD32";
-        pions[1].style.backgroundColor = "#9ACD32";
-        pions[2].style.backgroundColor = "#9ACD32";
+        return true;
+    }
+
+    console.log(pions[1].classList.contains(joueurs[tour]))
+    console.log(joueurs[tour])
+
+    if (
+        pions[3].classList.contains(joueurs[tour]) &&
+        pions[4].classList.contains(joueurs[tour]) &&
+        pions[5].classList.contains(joueurs[tour])
+    ) {
         return true;
     }
 
     if (
-        pions[3].innerHTML == joueurs[tour] &&
-        pions[4].innerHTML == joueurs[tour] &&
-        pions[5].innerHTML == joueurs[tour]
+        pions[6].classList.contains(joueurs[tour]) &&
+        pions[7].classList.contains(joueurs[tour]) &&
+        pions[8].classList.contains(joueurs[tour])
     ) {
-        pions[3].style.backgroundColor = "#9ACD32";
-        pions[4].style.backgroundColor = "#9ACD32";
-        pions[5].style.backgroundColor = "#9ACD32";
         return true;
     }
 
     if (
-        pions[6].innerHTML == joueurs[tour] &&
-        pions[7].innerHTML == joueurs[tour] &&
-        pions[8].innerHTML == joueurs[tour]
+        pions[0].classList.contains(joueurs[tour]) &&
+        pions[3].classList.contains(joueurs[tour]) &&
+        pions[6].classList.contains(joueurs[tour])
     ) {
-        pions[6].style.backgroundColor = "#9ACD32";
-        pions[7].style.backgroundColor = "#9ACD32";
-        pions[8].style.backgroundColor = "#9ACD32";
         return true;
     }
 
     if (
-        pions[0].innerHTML == joueurs[tour] &&
-        pions[3].innerHTML == joueurs[tour] &&
-        pions[6].innerHTML == joueurs[tour]
+        pions[1].classList.contains(joueurs[tour]) &&
+        pions[4].classList.contains(joueurs[tour]) &&
+        pions[7].classList.contains(joueurs[tour])
     ) {
-        pions[0].style.backgroundColor = "#9ACD32";
-        pions[3].style.backgroundColor = "#9ACD32";
-        pions[6].style.backgroundColor = "#9ACD32";
         return true;
     }
 
     if (
-        pions[1].innerHTML == joueurs[tour] &&
-        pions[4].innerHTML == joueurs[tour] &&
-        pions[7].innerHTML == joueurs[tour]
+        pions[2].classList.contains(joueurs[tour]) &&
+        pions[5].classList.contains(joueurs[tour]) &&
+        pions[8].classList.contains(joueurs[tour])
     ) {
-        pions[1].style.backgroundColor = "#9ACD32";
-        pions[4].style.backgroundColor = "#9ACD32";
-        pions[7].style.backgroundColor = "#9ACD32";
         return true;
     }
 
     if (
-        pions[2].innerHTML == joueurs[tour] &&
-        pions[5].innerHTML == joueurs[tour] &&
-        pions[8].innerHTML == joueurs[tour]
+        pions[0].classList.contains(joueurs[tour]) &&
+        pions[4].classList.contains(joueurs[tour]) &&
+        pions[8].classList.contains(joueurs[tour])
     ) {
-        pions[2].style.backgroundColor = "#9ACD32";
-        pions[5].style.backgroundColor = "#9ACD32";
-        pions[8].style.backgroundColor = "#9ACD32";
         return true;
     }
 
     if (
-        pions[0].innerHTML == joueurs[tour] &&
-        pions[4].innerHTML == joueurs[tour] &&
-        pions[8].innerHTML == joueurs[tour]
+        pions[2].classList.contains(joueurs[tour]) &&
+        pions[4].classList.contains(joueurs[tour]) &&
+        pions[6].classList.contains(joueurs[tour])
     ) {
-        pions[0].style.backgroundColor = "#9ACD32";
-        pions[4].style.backgroundColor = "#9ACD32";
-        pions[8].style.backgroundColor = "#9ACD32";
-        return true;
-    }
-
-    if (
-        pions[2].innerHTML == joueurs[tour] &&
-        pions[4].innerHTML == joueurs[tour] &&
-        pions[6].innerHTML == joueurs[tour]
-    ) {
-        pions[2].style.backgroundColor = "#9ACD32";
-        pions[4].style.backgroundColor = "#9ACD32";
-        pions[6].style.backgroundColor = "#9ACD32";
         return true;
     }
 }
@@ -169,4 +148,18 @@ function main() {
     }
 }
 
-main();
+document.addEventListener('DOMContentLoaded', function () {
+    // Afficher la superposition et la boîte du formulaire
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+
+    // Empêcher la soumission du formulaire par défaut
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Ajoutez ici le code pour traiter le formulaire (envoyer des données, etc.)
+        main();
+        // Vous pouvez également masquer le formulaire et la superposition après le traitement.
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+    });
+});
