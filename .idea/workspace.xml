@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ad85afc-61aa-4eea-9ba2-0d95e60c1297" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/morpion/morpion/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/morpion/morpion/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morpion/morpion/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/morpion/morpion/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morpion/morpion/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/morpion/morpion/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/morpion/morpion/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/morpion/morpion/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/morpion/morpion/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/morpion/morpion/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,28 +21,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2ZDwyyD05QNfpug71OmasCvmtAr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kiloi\OneDrive\Documents\GitHub\morpion\morpion" />
@@ -57,6 +57,9 @@
       <option name="presentableId" value="Default" />
       <updated>1701970216134</updated>
       <workItem from="1701970218218" duration="2126000" />
+      <workItem from="1702402513956" duration="17000" />
+      <workItem from="1702402562346" duration="1813000" />
+      <workItem from="1702410650415" duration="9978000" />
     </task>
     <servers />
   </component>

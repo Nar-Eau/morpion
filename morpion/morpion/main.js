@@ -99,34 +99,41 @@ var Afficheur = function(element) {
 function imgJoueurOnField(players, round) {
     return "<div id='gifJoueur' class='" + players[round] +"'> </div>";
 }
-function main() {
+
+function main(player1,player2) {
     var pions = document.querySelectorAll("#Jeu button");
-    var joueurs = ["croix", "rond"];
+    var joueurs = ['na', 'ro'];
+    var pseudo = [ '<span class="na">' + player1 + '</span>' , '<span class="ro">' + player2 + '</span>'];
+
+
     var tour = 0;
     var jeuEstFini = false;
     var afficheur = new Afficheur(document.querySelector("#StatutJeu"));
     var imgJoueur = "<div id='gifJoueur' class='" + joueurs[tour] +"'> </div>";
-    
+
+
     afficheur.sendMessage(
-        imgJoueur + " c'est votre tour."
+        pseudo[tour] + " c'est votre tour."
     );
     for (var i = 0, len = pions.length; i < len; i++) {
         pions[i].addEventListener("click", function() {
             if (jeuEstFini) return;
 
             if (!estValide(this)) {
-                afficheur.sendMessage(
-                    "Case occupée ! <br />" +
-                    imgJoueur +
-                    " c'est toujours à vous !"
-                );
+                if (!jeuEstFini) {
+                    afficheur.sendMessage(
+                        "Case occupée ! <br />" +
+                        pseudo[tour] +
+                        " c'est toujours à vous !"
+                    );
+                }
             } else {
                 setSymbol(this, joueurs[tour]);
                 jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
 
                 if (jeuEstFini) {
                     afficheur.sendMessage(
-                        imgJoueur +
+                        pseudo[tour] +
                         ' à gagné ! <br /> <a href="morpion.html">Rejouer</a>'
                     );
                     return;
@@ -142,24 +149,39 @@ function main() {
                 tour++;
                 tour = tour % 2;
                 imgJoueur = imgJoueurOnField(joueurs,tour);
-                afficheur.sendMessage(imgJoueur + " c'est à vous !");
+                afficheur.sendMessage(pseudo[tour] + " c'est à vous !");
             }
         });
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Afficher la superposition et la boîte du formulaire
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('popup').style.display = 'block';
+$(document).ready(function () {
+    $('#overlay').css('display', 'block');
+    $('#popup').css('display', 'block');
 
-    // Empêcher la soumission du formulaire par défaut
-    document.getElementById('myForm').addEventListener('submit', function (e) {
+    let player1 = 'croix';
+    let player2 = 'rond';
+
+    $('#player1').submit(function (e) {
         e.preventDefault();
-        // Ajoutez ici le code pour traiter le formulaire (envoyer des données, etc.)
-        main();
-        // Vous pouvez également masquer le formulaire et la superposition après le traitement.
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
+
+        player1 = $('#p1name').val();
+
+        $('#player2').css('display', 'flex');
+        $('#player1').css('display', 'none');
+
+        $('#player2').submit(function (e) {
+            e.preventDefault();
+
+            player2 = $('#p2name').val();
+            $('.marqueeTop .moving .name').html(player1);
+            $('.marqueeBot .moving .name').html(player2);
+
+            $('#overlay').css('display', 'none');
+            $('#popup').css('display', 'none');
+            main(player1, player2);
+        });
     });
 });
+
+
