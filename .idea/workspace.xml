@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ad85afc-61aa-4eea-9ba2-0d95e60c1297" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morpion/morpion/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/morpion/morpion/style.scss" afterDir="false" />
-    </list>
+    <list default="true" id="0ad85afc-61aa-4eea-9ba2-0d95e60c1297" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +63,7 @@
       <workItem from="1702402562346" duration="1813000" />
       <workItem from="1702410650415" duration="9978000" />
       <workItem from="1702588275057" duration="2415000" />
-      <workItem from="1702592368256" duration="781000" />
+      <workItem from="1702592368256" duration="1325000" />
     </task>
     <servers />
   </component>
